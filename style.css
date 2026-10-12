@@ -475,3 +475,143 @@ footer {
     font-size: 14px;
     margin-top: auto;
 }
+/* ========================================================== */
+/*           تعديلات الاستجابة للهواتف المحمولة (Media Queries) */
+/* ========================================================== */
+
+/* أجهزة التابلت والشاشات المتوسطة (Less than 992px) */
+@media (max-width: 992px) {
+    header {
+        padding: 15px 5%;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .section {
+        padding: 60px 5%;
+    }
+
+    .dash-main-container {
+        padding: 100px 5% 30px 5%;
+    }
+}
+
+/* الهواتف المحمولة (Less than 768px) */
+@media (max-width: 768px) {
+    /* 1. تخصيص شريط التنقل العلوي للهواتف */
+    header {
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px 20px;
+        position: fixed;
+    }
+
+    nav ul {
+        gap: 15px;
+        font-size: 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* 2. قسم الهيرو والترحيب */
+    .hero {
+        height: 100vh;
+        padding-top: 80px; /* لتعويض طول الـ Header بعد أن أصبح عمودياً */
+    }
+
+    .hero-content h1 {
+        font-size: 26px;
+        line-height: 1.4;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-btns .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* 3. العناوين الرئيسية للأقسام */
+    .section-title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    /* 4. تحويل الشبكات والبطاقات إلى عمود واحد */
+    .cards-grid,
+    .features-grid,
+    .hardware-grid,
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .feature-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .feature-box i {
+        margin-bottom: 5px;
+    }
+
+    /* 5. لوحة التحكم الحية للهواتف */
+    .dash-top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .dash-top-bar h2 {
+        font-size: 16px;
+    }
+
+    .dash-content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .route-node {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .alt-route-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* الهواتف الذكية الصغيرة جداً (Less than 480px) */
+@media (max-width: 480px) {
+    .logo {
+        font-size: 18px;
+    }
+
+    nav ul {
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    .hero-content h1 {
+        font-size: 22px;
+    }
+
+    .card, .hw-card, .dash-panel-box {
+        padding: 20px 15px;
+    }
+}
