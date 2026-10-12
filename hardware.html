@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Memory - الحساسات والهاردوير</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- شريط التنقل العلوي -->
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-microchip"></i>
+            <span>Road Memory | الهاردوير</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="hardware.html" class="active">الحساسات والهاردوير</a></li>
+                <li><a href="dashboard.html">لوحة التحكم الحية</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- محتوى صفحة الهاردوير -->
+    <section class="section" style="margin-top: 60px;">
+        <div class="container">
+            <h2 class="section-title">مكونات النظام والأجهزة المستخدمة <span>(Hardware)</span></h2>
+            <p style="text-align: center; color: #64748b; margin-bottom: 40px;">القطع الإلكترونية وحساسات إنترنت الأشياء المستخدمة لجمع بيانات الطرق والبيئة المحيطة.</p>
+            
+            <div class="hardware-grid">
+                <div class="hw-card">
+                    <div class="hw-icon"><i class="fa-solid fa-wave-square"></i></div>
+                    <h3>1. حساس الاهتزاز والتسارع (MPU6050)</h3>
+                    <p>يقيس الاهتزازات والتسارع. لو ظهرت تغيرات غير معتادة ومتكررة مرتبطة بجزء من الطريق، يسجل النظام ذلك باعتباره علامة تستحق الفحص لاحتمال وجود حفرة أو هبوط.</p>
+                </div>
+
+                <div class="hw-card">
+                    <div class="hw-icon"><i class="fa-solid fa-droplet"></i></div>
+                    <h3>2. حساس الرطوبة (Moisture Sensor)</h3>
+                    <p>يساعد في متابعة الرطوبة أو وجود المياه في المكان الذي تم تركيبه فيه بطريقة مناسبة، لأن المياه المتراكمة تساهم في تدهور وتآكل طبقات الأسفلت.</p>
+                </div>
+
+                <div class="hw-card">
+                    <div class="hw-icon"><i class="fa-solid fa-temperature-half"></i></div>
+                    <h3>3. حساس درجات الحرارة (Temperature Sensor)</h3>
+                    <p>يسجل تغير درجات الحرارة، ويساعد في مقارنة الظروف البيئية ببيانات الاهتزاز والرطوبة لمعرفة هل توجد مؤشرات غير طبيعية تؤثر على بنية الطريق.</p>
+                </div>
+
+                <div class="hw-card">
+                    <div class="hw-icon"><i class="fa-solid fa-ruler-combined"></i></div>
+                    <h3>4. حساس المسافة (Ultrasonic Sensor)</h3>
+                    <p>يقيس المسافة بين الحساس وساتح الطريق. وعند تثبيته ومعايرته بشكل صحيح، يساعد في اكتشاف تغيرات ارتفاع سطح الطريق والهبوط المفاجئ.</p>
+                </div>
+
+                <div class="hw-card" style="grid-column: 1 / -1; background: #1e293b; color: #fff;">
+                    <div class="hw-icon" style="background: #2563eb; color: #fff;"><i class="fa-solid fa-wifi"></i></div>
+                    <h3 style="color: #fff;">5. وحدة التحكم المركزية (ESP32)</h3>
+                    <p style="color: #cbd5e1;">المعالج الأساسي ووحدة الاتصال اللاسلكي؛ تجمع قراءات الحساسات السابقة، تعالجها مبدئياً، ثم ترسلها لحظياً إلى خادم وقاعدة البيانات المشتركة عبر الإنترنت لتحديث التطبيق.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2026 - مشروع Road Memory</p>
+    </footer>
+
+</body>
+</html>

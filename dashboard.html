@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Memory - لوحة التحكم الحية</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+
+    <!-- شريط التنقل العلوي -->
+    <header class="dashboard-header">
+        <div class="logo">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Road Memory | لوحة المراقبة</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="hardware.html">الحساسات والهاردوير</a></li>
+                <li><a href="dashboard.html" class="active">لوحة التحكم الحية</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="dash-main-container">
+        <div class="dash-top-bar">
+            <h2>مراقبة البنية التحتية وحركة المرور (قاعدة البيانات المشتركة)</h2>
+            <span class="live-badge"><i class="fa-solid fa-circle"></i> النظام متصل (ESP32 Active)</span>
+        </div>
+
+        <!-- الإحصائيات السريعة -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon bg-blue"><i class="fa-solid fa-road"></i></div>
+                <div>
+                    <span>حالة قطاعات الطرق</span>
+                    <h3>92% مستقرة</h3>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon bg-orange"><i class="fa-solid fa-bridge"></i></div>
+                <div>
+                    <span>ازدحام الكباري</span>
+                    <h3>متوسط (تكدس جزئي)</h3>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon bg-green"><i class="fa-solid fa-droplet"></i></div>
+                <div>
+                    <span>مؤشر تجمع المياه</span>
+                    <h3>لا توجد تسربات</h3>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon bg-red"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                <div>
+                    <span>التنبيهات الحرجة</span>
+                    <h3>0 بلاغات طارئة</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- الخريطة التفاعلية وسجل البيانات -->
+        <div class="dash-content-grid">
+            <div class="dash-panel-box">
+                <div class="panel-header">
+                    <h3><i class="fa-solid fa-map-location-dot"></i> خريطة الطرق والقطاعات الحية</h3>
+                    <span class="refresh-time">تحديث فوري</span>
+                </div>
+                <div class="map-mockup">
+                    <div class="route-node stable">
+                        <span>قطاع A1 (الشارع الرئيسي)</span>
+                        <p>اهتزازات طبيعية - سطح صالح للاستخدام</p>
+                        <span class="badge-status green">آمن</span>
+                    </div>
+                    <div class="route-node warning">
+                        <span>قطاع A2 (مدخل الكوبري)</span>
+                        <p>كثافة مرورية مرتفعة - بدء التكدس المروري</p>
+                        <span class="badge-status orange">تنبيه زحام</span>
+                    </div>
+                    <div class="route-node stable">
+                        <span>قطاع B1 (الطريق الدائري الفرعي)</span>
+                        <p>رطوبة منخفضة - لا توجد تجمعات مياه</p>
+                        <span class="badge-status green">آمن</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dash-panel-box">
+                <h3><i class="fa-solid fa-list-check"></i> سجل بيانات الحساسات (ESP32 Stream)</h3>
+                <div class="log-list">
+                    <div class="log-item">
+                        <span class="time">منذ دقيقة</span>
+                        <p><strong>MPU6050:</strong> قراءة الاهتزاز في القطاع A1 طبيعية (0.12g).</p>
+                    </div>
+                    <div class="log-item">
+                        <span class="time">منذ 3 دقائق</span>
+                        <p><strong>Traffic Sensor:</strong> رصد عبور 45 سيارة/دقيقة عند مدخل الكوبري.</p>
+                    </div>
+                    <div class="log-item">
+                        <span class="time">منذ 10 دقائق</span>
+                        <p><strong>Moisture Sensor:</strong> جاف تماماً، النسبة 2%.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- مقترحات المسارات البديلة -->
+        <div class="dash-panel-box alternative-routes-box">
+            <h3><i class="fa-solid fa-route"></i> اقتراح المسارات الذكية التلقائية</h3>
+            <div class="alt-route-card">
+                <div class="route-info">
+                    <h4>الرحلة من (نقطة أ) إلى (نقطة ب):</h4>
+                    <p>الطريق الأساسي المؤدي للكوبري يعاني من كثافة مرورية حالياً.</p>
+                </div>
+                <div class="route-suggestion">
+                    <span class="suggestion-tag">مسار بديل مقترح</span>
+                    <p>تم تحويل التوجيه إلى <strong>المحور البديل (طريق النصر)</strong> لتجنب التكدس ووفر الوقت بمقدار 7 دقائق.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>نظام Road Memory الذكي &copy; 2026 - لوحة المراقبة المركزية</p>
+    </footer>
+
+</body>
+</html>
